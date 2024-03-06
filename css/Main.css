@@ -1,0 +1,37 @@
+/*==========================================================================
+ROOT
+==========================================================================*/
+:root {
+    --background-color: #292929;
+    --accent-color2: #d1681d;
+    --accent-color1: #00039b;
+    --text-color: #FFF;
+    --HeaderFont:"Cosmio"; /* just for example */
+    --TextFont: "###"; /* Needs to be set */
+  }
+  
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+   @font-face {
+    font-display: swap;
+    font-family: "Cosmio";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../src/fonts/COSMIO-Regular.woff2") format("woff2");
+  }
+
+  /* ==========================================================================
+   Main Settings
+   ========================================================================== */
+
+html {
+    font-size: 1rem;
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: var(--TextFont);
+}
+
+h1 {
+  font-family: var(--HeaderFont);
+}
