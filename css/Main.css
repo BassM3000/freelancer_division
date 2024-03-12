@@ -2,36 +2,139 @@
 ROOT
 ==========================================================================*/
 :root {
-    --background-color: #292929;
-    --accent-color2: #d1681d;
-    --accent-color1: #00039b;
-    --text-color: #FFF;
-    --HeaderFont:"Cosmio"; /* just for example */
-    --TextFont: "###"; /* Needs to be set */
-  }
-  
+  --background-color: #292929;
+  --accent-color2: #d1681d;
+  --accent-color1: #00039b;
+  --text-color: #FFF;
+  --HeaderFont: "Sonoma";
+  --TextFont: "Ubuntu";
+}
+
 /* ==========================================================================
    Fonts
    ========================================================================== */
-   @font-face {
-    font-display: swap;
-    font-family: "Cosmio";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../src/fonts/COSMIO-Regular.woff2") format("woff2");
-  }
+@font-face {
+  font-display: swap;
+  font-family: "Sonoma";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/fonts/LT\ Sonoma\ 2.otf") format("opentype");
+}
 
-  /* ==========================================================================
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/fonts/UbuntuSans-Regular.ttf") format("Truetype");
+}
+
+/* ==========================================================================
    Main Settings
    ========================================================================== */
 
 html {
-    font-size: 1rem;
-    background-color: var(--background-color);
-    margin: 0;
-    font-family: var(--TextFont);
+  font-size: 1rem;
+  background-color: var(--background-color);
+  margin: 0 auto;
+  font-family: var(--TextFont);
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 h1 {
   font-family: var(--HeaderFont);
+  font-size: 1.8rem;
+  color: #FFF;
+  filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
+}
+
+h2 {
+  color: #FFF;
+}
+
+main {
+  margin-top: 350px;
+}
+
+a {
+  text-decoration: none;
+  font-family: var(--HeaderFont);
+  color: #d1681d;
+}
+
+/* ==========================================================================
+   Header and Navigation
+   ========================================================================== */
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: fixed;
+  z-index: 999;
+  background-color: var(--background-color2);
+  width: 100vw;
+  top: 0;
+  transition: top 1s;
+  text-align: center;
+}
+
+.Logo {
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+
+nav li {
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 0.2rem;
+  padding: 0.3rem;
+  background-color: #292929;
+}
+
+/* ==========================================================================
+  Welcome Area
+   ========================================================================== */
+
+#WhoWeAre div {
+  width: 300px;
+  height: 150px;
+  background-color: #d1681d;
+  border: #00039b;
+}
+
+/* ==========================================================================
+ Our Team
+   ========================================================================== */
+#OurTeam div {
+  width: 300px;
+  height: 150px;
+  background-color: #d1681d;
+  border: #00039b;
+}
+
+/* ==========================================================================
+Reference
+========================================================================== */
+#Reference div {
+  width: 300px;
+  height: 150px;
+  background-color: #d1681d;
+  border: #00039b;
+}
+
+/* ==========================================================================
+Contact Form
+   ========================================================================== */
+#Contact div {
+  width: 300px;
+  height: 150px;
+  background-color: #d1681d;
+  border: #00039b;
 }
