@@ -39,28 +39,31 @@ html {
   margin: 0 auto;
   font-family: var(--TextFont);
   scroll-behavior: smooth;
-  overscroll-behavior: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+  color: var(--text-color);
+  text-align: center;
 }
 
 h1 {
   font-family: var(--HeaderFont);
   font-size: 1.8rem;
-  color: #FFF;
-  filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
-}
-
-h2 {
-  color: #FFF;
+  -webkit-filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
+          filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
 }
 
 main {
-  margin-top: 350px;
+  margin-top: 30px;
 }
 
 a {
   text-decoration: none;
   font-family: var(--HeaderFont);
-  color: #d1681d;
+  color: var(--accent-color2);
+}
+
+.hidden {
+  display: none;
 }
 
 /* ==========================================================================
@@ -69,33 +72,94 @@ a {
 header {
   display: grid;
   grid-template-columns: 1fr;
-  position: fixed;
-  z-index: 999;
-  background-color: var(--background-color2);
   width: 100vw;
   top: 0;
   transition: top 1s;
   text-align: center;
 }
 
+#header {
+  position: fixed;
+  margin-top: 230px;
+}
+
 .Logo {
   margin: 0 auto;
 }
 
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  justify-content: space-around;
-  padding: 0.2rem;
+#Navi {
+  position: absolute;
+  margin-left: 250px;
 }
 
-nav li {
-  padding: 0.3rem;
+#myLinks ul {
+  display: none;
+}
+
+#myLinks {
+  list-style: none;
+  margin-right: 200px;
+  margin-left: 65px;
+  margin-top: 33px;
+  background-color: var(--background-color);
+  border: var(--accent-color2);
   border-radius: 0.3rem;
-  margin: 0.2rem;
-  padding: 0.3rem;
-  background-color: #292929;
+  border: var(--accent-color1) solid 2px;
+}
+
+#myLinks li {
+  margin-left: -33px;
+  width: 50vw;
+}
+
+#myLinks a {
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: var(--accent-color1);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.ham2 .top {
+  stroke-dasharray: 40 121;
+}
+
+.ham2 .bottom {
+  stroke-dasharray: 40 121;
+}
+
+.ham2.active .top {
+  stroke-dashoffset: -102px;
+}
+
+.ham2.active .bottom {
+  stroke-dashoffset: -102px;
 }
 
 /* ==========================================================================
@@ -105,8 +169,8 @@ nav li {
 #WhoWeAre div {
   width: 300px;
   height: 150px;
-  background-color: #d1681d;
-  border: #00039b;
+  background-color: var(--accent-color2);
+  border: var(--accent-color1);
 }
 
 /* ==========================================================================
@@ -114,27 +178,44 @@ nav li {
    ========================================================================== */
 #OurTeam div {
   width: 300px;
-  height: 150px;
-  background-color: #d1681d;
-  border: #00039b;
+  height: 300px;
+  background-color: var(--accent-color2);
+
 }
 
 /* ==========================================================================
 Reference
 ========================================================================== */
+#Reference {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 #Reference div {
-  width: 300px;
-  height: 150px;
-  background-color: #d1681d;
-  border: #00039b;
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 200px;
+  background-color: var(--accent-color2);
+  margin: 0 auto;
 }
 
 /* ==========================================================================
 Contact Form
    ========================================================================== */
 #Contact div {
-  width: 300px;
-  height: 150px;
-  background-color: #d1681d;
-  border: #00039b;
+  width: 350px;
+  height: 250px;
+  background-color: var(--accent-color2);
+}
+
+/* ==========================================================================
+Different Viewports
+========================================================================== */
+
+@media only screen and (min-width: 400px) {
+  #Navi {
+    margin-left: 300px;
+  }
 }
