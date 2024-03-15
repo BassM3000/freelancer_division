@@ -17,19 +17,19 @@
 
 #To Be Continued
 
-Ideas:
+# Ideas:
 
-Texts loading dynamically from other HTML Files
-little Animations
-Eastereggs?
-User Profile Login to update Resumes and Skills at any time
+- Texts loading dynamically from other HTML Files
+- little Animations
+- Eastereggs?
+- User Profile Login to update Resumes and Skills at any time
 
-IMPORTANT BEFORE LAUNCH:
-Need to address Admins and Recruiters
-Who are the CEO's?
-How to distribute Projects fair and square
-Costumer satisfaction and how to avoid Issues
-Reputation of every Freelance Member
-IT Security
-Member Profiles needs to be send from everyone
-Disclaimer and Cookie Policy GDPR Conform
+# IMPORTANT BEFORE LAUNCH:
+- Need to address Admins and Recruiters
+- Who are the CEO's?
+- How to distribute Projects fair and square
+- Costumer satisfaction and how to avoid Issues
+- Reputation of every Freelance Member
+- IT Security
+- Member Profiles needs to be send from everyone
+- Disclaimer and Cookie Policy GDPR Conform
