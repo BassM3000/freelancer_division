@@ -4,6 +4,7 @@ ROOT
 :root {
   --background-color: #292929;
   --accent-color2: #d1681d;
+  --subtleAccent2: #d1681d83;
   --accent-color1: #00039b;
   --text-color: #FFF;
   --HeaderFont: "Sonoma";
@@ -40,7 +41,7 @@ html {
   font-family: var(--TextFont);
   scroll-behavior: smooth;
   -ms-scroll-chaining: none;
-      overscroll-behavior: none;
+  overscroll-behavior: none;
   color: var(--text-color);
   text-align: center;
 }
@@ -49,11 +50,7 @@ h1 {
   font-family: var(--HeaderFont);
   font-size: 1.8rem;
   -webkit-filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
-          filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
-}
-
-main {
-  margin-top: 30px;
+  filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
 }
 
 a {
@@ -80,7 +77,7 @@ header {
 
 #header {
   position: fixed;
-  margin-top: 230px;
+  margin-top: 15rem;
 }
 
 .Logo {
@@ -89,34 +86,35 @@ header {
 
 #Navi {
   position: absolute;
-  margin-left: 250px;
+  margin-left: 80%;  
 }
 
-#myLinks ul {
-  display: none;
+.myLinks.active {
+  transition: all ease-out 0.6s;
+  transform: translate(-100%, 2rem);
 }
 
-#myLinks {
+.myLinks {
+  display: block;
   list-style: none;
-  margin-right: 200px;
-  margin-left: 65px;
-  margin-top: 33px;
-  background-color: var(--background-color);
-  border: var(--accent-color2);
-  border-radius: 0.3rem;
-  border: var(--accent-color1) solid 2px;
-}
-
-#myLinks li {
-  margin-left: -33px;
+  padding: 1rem;
   width: 50vw;
+  margin-left: 100%;
+  transition: all ease-in 0.6s;
+  border-radius: 2rem;
+  background-color: var(--background-color);
 }
 
-#myLinks a {
+
+.myLinks a {
   color: var(--text-color);
   display: flex;
   justify-content: center;
-  margin: 0;
+  margin: 0.3rem;
+  padding: 1rem;
+  width: 50%;
+  border: var(--subtleAccent2) solid 0.3rem;
+  border-radius: 2rem;
 }
 
 .ham {
@@ -128,6 +126,9 @@ header {
   -ms-user-select: none;
   user-select: none;
   position: relative;
+  z-index: 999;
+  background-color: var(--subtleAccent2);
+  border-radius: 2rem;
 }
 
 .hamRotate.active {
@@ -214,8 +215,8 @@ Contact Form
 Different Viewports
 ========================================================================== */
 
-@media only screen and (min-width: 400px) {
-  #Navi {
-    margin-left: 300px;
+@media only  screen and (min-width: 1000px) {
+  #header {
+    margin-top: 5rem;
   }
 }

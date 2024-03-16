@@ -6,20 +6,17 @@ window.onscroll = function () {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("header").style.top = "0";
     } else {
-        document.getElementById("header").style.top = "-400px";
+        document.getElementById("header").style.top = "-1000px";
     }
     prevScrollpos = currentScrollPos;
 }
 //////////////////////////////----------------------------Hamburger Navigation Show/hide----------------------------//////////////////////////////
 
-let hamburger = document.getElementById('Navi');
-let menu = document.getElementById('myLinks');
-menu.style.display = "none";
-hamburger.addEventListener('click', function () {
+$("#Navi").on("click", function() {
+    let myLinks = document.getElementsByClassName("myLinks");
+    let Navi = document.getElementById("Navi");
 
-    if (menu.style.display === "none") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
+    if (Navi.click) {
+        $(myLinks).toggleClass("active");
     }
 });
