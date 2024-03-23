@@ -4,8 +4,8 @@ ROOT
 :root {
   --background-color: #292929;
   --accent-color2: #d1681d;
-  --subtleAccent2: #d1681d83;
-  --accent-color1: #00039b;
+  --subtleAccent2: #e98945;
+  --accent-color1: #1d67d6;
   --text-color: #FFF;
   --HeaderFont: "Sonoma";
   --TextFont: "Ubuntu";
@@ -49,6 +49,7 @@ html {
 h1 {
   font-family: var(--HeaderFont);
   font-size: 1.8rem;
+  margin: 2rem;
   -webkit-filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
   filter: drop-shadow(var(--accent-color1) 3px 3px 1px) drop-shadow(var(--accent-color2)-2px -2px 1px);
 }
@@ -67,57 +68,51 @@ a {
    Header and Navigation
    ========================================================================== */
 header {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
   width: 100vw;
   top: 0;
-  transition: top 1s;
-  text-align: center;
-}
-
-#header {
-  position: fixed;
-  margin-top: 15rem;
-}
-
-.Logo {
-  margin: 0 auto;
-}
-
-#Navi {
-  position: absolute;
-  margin-left: 80%;  
-}
-
-.myLinks.active {
-  transition: all ease-out 0.6s;
-  transform: translate(-100%, 2rem);
-}
-
-.myLinks {
-  display: block;
-  list-style: none;
-  padding: 1rem;
-  width: 50vw;
-  margin-left: 100%;
-  transition: all ease-in 0.6s;
-  border-radius: 2rem;
+  border-radius: 0.5rem 0.5rem 2rem 2rem;
   background-color: var(--background-color);
 }
 
-
-.myLinks a {
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  margin: 0.3rem;
-  padding: 1rem;
-  width: 50%;
-  border: var(--subtleAccent2) solid 0.3rem;
-  border-radius: 2rem;
+main {
+  margin-top: 20rem;
 }
 
-.ham {
+#header {
+  transition: top 1s;
+}
+
+nav ul {
+  list-style: none;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  border-radius: 2rem 0.5rem 2rem 2rem;
+  border-top: solid 0.2rem var(--accent1-color);
+  border-right: solid 0.2rem var(--accent1-color);
+  padding: 0.3rem;
+}
+
+nav li {
+  padding: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#HamburgerToggle {
+  position: absolute;
+  margin-left: 60%;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: transform 400ms;
@@ -125,10 +120,45 @@ header {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  position: relative;
   z-index: 999;
-  background-color: var(--subtleAccent2);
-  border-radius: 2rem;
+  margin-top: -2rem;
+}
+
+.ham {
+  filter: drop-shadow(var(--accent-color1) 0rem 0.2rem 0.2rem)
+  drop-shadow(var(--accent-color1)0rem -0.2rem 0.2rem);
+}
+
+.ham.active {
+  filter: drop-shadow(var(--accent-color2) 0rem 0.2rem 0.2rem)
+  drop-shadow(var(--accent-color2)0rem -0.2rem 0.2rem);
+}
+
+
+.myLinks.active {
+  transform: translate(40vw);
+  margin-top: 1.5rem;
+}
+
+.myLinks {
+  transform: translate(110vw);
+  transition: ease-out 1000ms;
+  background-color: var(--background-color);
+  position: absolute;
+  border-radius: 1rem;
+  width: 100vw;
+  margin-top: 1.5rem;
+}
+
+.myLinks a {
+  color: var(--text-color);
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border: var(--accent-color1) solid 0.2rem;
+  padding: 0.3rem;
+  margin: 0.7rem;
 }
 
 .hamRotate.active {
@@ -141,8 +171,9 @@ header {
 
 .line {
   fill: none;
-  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: var(--accent-color1);
+  transition: stroke-dasharray 800ms, stroke-dashoffset 800ms;
+  stroke: var(--accent-color2);
+  transition: ease 800ms;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
@@ -157,10 +188,16 @@ header {
 
 .ham2.active .top {
   stroke-dashoffset: -102px;
+  stroke: var(--accent-color1);
 }
 
 .ham2.active .bottom {
   stroke-dashoffset: -102px;
+  stroke: var(--accent-color1);
+}
+
+.ham2.active .middle {
+  stroke: var(--accent-color1);
 }
 
 /* ==========================================================================
@@ -214,9 +251,22 @@ Contact Form
 /* ==========================================================================
 Different Viewports
 ========================================================================== */
+@media only screen and (min-width: 200px) {
 
-@media only  screen and (min-width: 1000px) {
   #header {
-    margin-top: 5rem;
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  #header {
+    display: flex;
+  }
+
+  #MobileNav {
+    display: none;
+  }
+  main {
+    margin-top: 15rem;
   }
 }
