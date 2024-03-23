@@ -6,15 +6,15 @@ window.onscroll = function () {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("header").style.top = "0";
     } else {
-        document.getElementById("header").style.top = "-1000px";
+        document.getElementById("header").style.top = "-20rem";
     }
     prevScrollpos = currentScrollPos;
-}
+};
 //////////////////////////////----------------------------Hamburger Navigation Show/hide----------------------------//////////////////////////////
 
-$("#Navi").on("click", function() {
+$("#HamburgerToggle").on("click", function() {
     let myLinks = document.getElementsByClassName("myLinks");
-    let Navi = document.getElementById("Navi");
+    let Navi = document.getElementById("HamburgerToggle");
 
     if (Navi.click) {
         $(myLinks).toggleClass("active");
