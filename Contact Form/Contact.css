@@ -1,0 +1,49 @@
+/*==========================================================================
+ROOT
+==========================================================================*/
+:root {
+    --background-color: #292929;
+    --accent-color2: #d1681d;
+    --subtleAccent2: #d1681d83;
+    --accent-color1: #00039b;
+    --text-color: #FFF;
+    --HeaderFont: "Sonoma";
+    --TextFont: "Ubuntu";
+  }
+  
+  /* ==========================================================================
+     Fonts
+     ========================================================================== */
+  @font-face {
+    font-display: swap;
+    font-family: "Sonoma";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../src/fonts/LT\ Sonoma\ 2.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-display: swap;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../src/fonts/UbuntuSans-Regular.ttf") format("Truetype");
+  }
+  
+
+.Container {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 4px;
+    width:20%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+
+textarea {
+    width:50%;
+    height: 50%;
+}
+
