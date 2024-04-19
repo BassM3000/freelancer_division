@@ -3,6 +3,7 @@ ROOT
 ==========================================================================*/
 :root {
   --background-color: #292929;
+  --background-color2: #5f799b;
   --accent-color2: #d1681d;
   --subtleAccent2: #e98945;
   --accent-color1: #1d67d6;
@@ -37,7 +38,6 @@ ROOT
 html {
   font-size: 1rem;
   background-color: var(--background-color);
-  margin: 0 auto;
   font-family: var(--TextFont);
   scroll-behavior: smooth;
   -ms-scroll-chaining: none;
@@ -57,7 +57,8 @@ h1 {
 a {
   text-decoration: none;
   font-family: var(--HeaderFont);
-  color: var(--accent-color2);
+  color: var(--text-color);
+  filter: drop-shadow(var(--accent-color2)0rem 0.2rem 0.2rem);
 }
 
 .hidden {
@@ -70,23 +71,11 @@ a {
 header {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  z-index: 999;
-  width: 100vw;
-  top: 0;
   border-radius: 0.5rem 0.5rem 2rem 2rem;
-  background-color: var(--background-color);
+  background-color: var(--background-color2);
+  filter: drop-shadow(var(--accent-color1) 0rem 2rem 2rem );
 }
 
-main {
-  margin-top: 20rem;
-}
-
-#header {
-  transition: top 1s;
-}
 
 nav ul {
   list-style: none;
@@ -94,63 +83,61 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  a {
+    border-radius: 2rem 0.5rem 2rem 2rem;
+    border-top: solid 0.2rem var(--accent1-color);
+    border-right: solid 0.2rem var(--accent1-color);
+    padding: 0.3rem;
+  }
+  li {
+    padding: 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-nav a {
-  border-radius: 2rem 0.5rem 2rem 2rem;
-  border-top: solid 0.2rem var(--accent1-color);
-  border-right: solid 0.2rem var(--accent1-color);
-  padding: 0.3rem;
-}
-
-nav li {
-  padding: 0.4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+#MobileNav {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 
 #HamburgerToggle {
   position: absolute;
-  margin-left: 60%;
+  right:0;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 400ms;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   z-index: 999;
 }
 
+}
+
+
 .ham {
   filter: drop-shadow(var(--accent-color1) 0rem 0.2rem 0.2rem)
   drop-shadow(var(--accent-color1)0rem -0.2rem 0.2rem);
-}
 
-.ham.active {
-  filter: drop-shadow(var(--accent-color2) 0rem 0.2rem 0.2rem)
-  drop-shadow(var(--accent-color2)0rem -0.2rem 0.2rem);
-}
-
-
-.myLinks.active {
-  transform: translate(40vw);
-  margin-top: 1.5rem;
+  &.active {
+    filter: drop-shadow(var(--accent-color2) 0rem 0.2rem 0.2rem)
+    drop-shadow(var(--accent-color2)0rem -0.2rem 0.2rem);
+  }
 }
 
 .myLinks {
-  transform: translate(110vw);
+  transform: translate(110%);
   transition: ease-out 1000ms;
   background-color: var(--background-color);
   position: absolute;
   border-radius: 1rem;
-  width: 100vw;
+  width: 100%;
   margin-top: 1.5rem;
-}
 
-.myLinks a {
-  color: var(--text-color);
+  &.active {
+    transform: translate(40%);
+    margin-top: 1.5rem;
+  }
+
+  a {
   border-radius: 0.2rem;
   display: flex;
   justify-content: left;
@@ -158,6 +145,7 @@ nav li {
   border: var(--accent-color1) solid 0.2rem;
   padding: 0.3rem;
   margin: 0.7rem;
+}
 }
 
 .hamRotate.active {
