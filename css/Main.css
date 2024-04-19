@@ -101,7 +101,10 @@ header {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   a {
     margin: 1rem;
   }
