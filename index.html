@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="author" content="NLL">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Community hub for the Freelancer Division">
   <title>Freelancer Division</title>
-  <link rel="icon" href="Logo 1.png" type="image/x-icon">
   <link rel="stylesheet" href="css/main.css" type="text/css">
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="js/main.js" defer></script>
@@ -24,13 +23,13 @@ Favicon
 
 </head>
 
-<div>
+<body>
 
   <!-- ==========================================================================
 Header and Navigation
 ========================================================================== -->
 <header id="header">
-  <a href="index.html"><img src="./src/img/Main logo design.png" width="200px" alt="Logo"></a>
+  <a href="index.html"><img class="Logo" src="./src/img/Main_logo_design.png" alt="Logo"></a>
   <h1>Freelancer Division</h1>
   <nav>
       <a href="#WhoWeAre">Who we are</a>
@@ -42,7 +41,7 @@ Header and Navigation
 </header>
   <header>
     <div id="MobileNav">
-    <a href="index.html"><img class="Logo" src="./src/img/Main logo design.png" height="150px" alt="Company Logo"></a>
+    <a href="index.html"><img class="Logo" src="./src/img/Main_logo_design.png" alt="Company Logo"></a>
     <h1>Freelancer Division</h1>
     <div id="HamburgerToggle">
         <svg class="ham ham2" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
@@ -60,8 +59,8 @@ Header and Navigation
       <a href="#Contact">Contact</a>
       <a href="disclaimer.html">Disclaimer</a>
     </div>
+    </div>
   </header>
-</div>
   <!-- ==========================================================================
 Main
 ========================================================================== -->
@@ -103,10 +102,10 @@ Main
 
   </main>
 
-</body>
+  <footer>
+    <a href="disclaimer.html">Disclaimer</a> <!-- after everything is done, we need a cookie policy and disclaimer -->
+  </footer>
 
-<footer>
-  <a href="disclaimer.html">Disclaimer</a> <!-- after everything is done, we need a cookie policy and disclaimer -->
-</footer>
+</body>
 
 </html>
